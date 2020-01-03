@@ -1,0 +1,15 @@
+VIEW "com.sap.datacloud.view::SICView" ( "ID_NUMBER", "SIC1", "DESC1","SIC2", "DESC2","SIC3", "DESC3","SIC4", "DESC4","SIC5", "DESC5","SIC6", "DESC6" ) AS select
+	 T0."ID_NUMBER",
+	 T0."SIC1", T1."SIC_DESC", 
+	 T0."SIC2", T2."SIC_DESC",
+	 T0."SIC3", T3."SIC_DESC", 
+	 T0."SIC4", T4."SIC_DESC", 
+	 T0."SIC5", T5."SIC_DESC", 
+	 T0."SIC6", T6."SIC_DESC" 
+from "com.sap.datacloud.data::DnB.SIC_TABLE" T0 
+left outer join "com.sap.datacloud.data::DnB.SIC_DESC" T1 on T0."SIC1" = T1."SIC" 
+left outer join "com.sap.datacloud.data::DnB.SIC_DESC" T2 on T0."SIC2" = T2."SIC"
+left outer join "com.sap.datacloud.data::DnB.SIC_DESC" T3 on T0."SIC2" = T3."SIC"
+left outer join "com.sap.datacloud.data::DnB.SIC_DESC" T4 on T0."SIC2" = T4."SIC"
+left outer join "com.sap.datacloud.data::DnB.SIC_DESC" T5 on T0."SIC2" = T5."SIC"
+left outer join "com.sap.datacloud.data::DnB.SIC_DESC" T6 on T0."SIC2" = T6."SIC" WITH READ ONLY	 

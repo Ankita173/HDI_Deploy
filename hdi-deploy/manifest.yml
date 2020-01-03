@@ -1,0 +1,6 @@
+applications:
+- name: data_cloud_hdi_container_v4
+  memory: 64M
+  no-route: true
+  services:
+  - data_cloud_hdi_shared_v4

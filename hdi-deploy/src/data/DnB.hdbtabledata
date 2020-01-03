@@ -1,0 +1,116 @@
+{
+	"format_version": 1,
+	"imports": 
+	[
+		{
+			"target_table": "com.sap.datacloud.data::DnB.DUNS_TABLE",
+			
+			"source_data": {
+				"data_type": "CSV",
+				"file_name": "com.sap.datacloud.data::DUNS.csv",
+				"has_header": false,
+				"dialect": "HANA",
+				"type_config": {
+					"delimiter": ","
+				}
+			},
+			"import_settings": {
+				"import_columns": 
+				[
+					"ID_TYPE",
+					"ID_NUMBER",
+					"BUSINESS_NAME",
+					"CEO",
+					"STREET_ADR_1",
+					"STREET_ADR_2",
+					"CITY",
+					"STATE",
+					"POSTAL_CODE",
+					"COUNTRY_NAME",
+					"COUNTRY_CODE"
+				]
+			},
+			"column_mappings": {
+				"ID_TYPE": 1,
+				"ID_NUMBER": 2,
+				"BUSINESS_NAME": 3,
+				"CEO": 4,
+				"STREET_ADR_1": 5,
+				"STREET_ADR_2": 6,
+				"CITY": 7,
+				"STATE": 8,
+				"POSTAL_CODE": 9,
+				"COUNTRY_NAME": 10,
+				"COUNTRY_CODE": 11
+			}
+		},
+		{
+			"target_table": "com.sap.datacloud.data::DnB.SIC_TABLE",
+			
+			"source_data": {
+				"data_type": "CSV",
+				"file_name": "com.sap.datacloud.data::SIC_TABLE.csv",
+				"has_header": false,
+				"dialect": "HANA",
+				"type_config": {
+					"delimiter": ","
+				}
+			},
+			"import_settings": {
+				"import_columns": 
+				[
+					"ID_NUMBER",
+					"SIC1",
+					"SIC2",
+					"SIC3",
+					"SIC4",
+					"SIC5",
+					"SIC6"
+				]
+			},
+			"column_mappings": {
+				"ID_NUMBER": 1,
+				"SIC1": 2,
+				"SIC2": 3,
+				"SIC3": 4,
+				"SIC4": 5,
+				"SIC5": 6,
+				"SIC6": 7
+			}
+		},
+		{
+			"target_table": "com.sap.datacloud.data::DnB.SIC_DESC",
+			
+			"source_data": {
+				"data_type": "CSV",
+				"file_name": "com.sap.datacloud.data::SIC_DESC.csv",
+				"has_header": false,
+				"dialect": "HANA",
+				"type_config": {
+					"delimiter": ","
+				}
+			},
+			"import_settings": {
+				"import_columns": 
+				[
+					"SIC",
+					"SIC_DESC"
+				]
+			},
+			"column_mappings": {
+				"SIC": 1,
+				"SIC_DESC": 2
+			}
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+namespace com.sap.datacloud.data;
+
+context DnB{
+	Entity DUNS_TABLE {
+		ID_TYPE: String(5);
+        key  ID_NUMBER: String(9);
+		BUSINESS_NAME: String(120);
+		
+		CEO: String(30);
+		STREET_ADR_1: String(64);
+		STREET_ADR_2: String(64);
+		CITY: String(50);
+		STATE: String(50);
+		POSTAL_CODE: String(16);
+		COUNTRY_NAME: String(50);
+		COUNTRY_CODE: String(3);
+      } technical configuration {
+          column store;
+		  fuzzy search index on (BUSINESS_NAME);
+      };
+	
+	Entity SIC_TABLE {
+        key ID_NUMBER: String(9); 
+		DUNS: Association[1] to DUNS_TABLE on DUNS.ID_NUMBER = ID_NUMBER;
+		
+		SIC1: String(8);
+		SIC1_DESC: Association[*] to SIC_DESC on SIC1_DESC.SIC = SIC1;
+		
+		SIC2: String(8);
+		SIC2_DESC: Association[*] to SIC_DESC on SIC2_DESC.SIC = SIC2;
+		
+		SIC3: String(8);
+		SIC3_DESC: Association[*] to SIC_DESC on SIC3_DESC.SIC = SIC3;
+		
+		SIC4: String(8);
+		SIC4_DESC: Association[*] to SIC_DESC on SIC4_DESC.SIC = SIC4;
+		
+		SIC5: String(8);
+		SIC5_DESC: Association[*] to SIC_DESC on SIC5_DESC.SIC = SIC5;
+		
+		SIC6: String(8);
+		SIC6_DESC: Association[*] to SIC_DESC on SIC6_DESC.SIC = SIC6; 
+		
+      } technical configuration {
+          column store;
+      };
+
+	Entity SIC_DESC {
+         
+		key SIC: String(8);
+		SIC_DESC:	String(50);
+		
+      } technical configuration {
+          column store;
+      };
+	  
+};
