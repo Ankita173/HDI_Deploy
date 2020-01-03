@@ -1,4 +1,3 @@
-***Consider this as v4 of the DB POC***
 
 This app has created the HDI Container with 3 table (DnB.DUNS_TABLE, DnB.SIC_TABLE, DnB.SIC_DESC), 1 view (SICView) and has records inserted via a csv file:
 
